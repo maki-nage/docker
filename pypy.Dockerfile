@@ -3,6 +3,7 @@ FROM pypy:3.6-stretch
 WORKDIR /opt/makinage
 
 RUN update-alternatives --install /usr/bin/python3 python3 /usr/local/bin/pypy3 0
+RUN apt-get update && apt-get install -y ffmpeg
 
 COPY run.sh /opt
 COPY requirements.txt /tmp
