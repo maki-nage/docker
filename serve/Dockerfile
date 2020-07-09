@@ -1,4 +1,4 @@
-FROM makinage:latest-pypy
+FROM makinage/makinage:latest-pypy
 
 WORKDIR /opt/makinage
 COPY requirements_serve.txt /tmp
