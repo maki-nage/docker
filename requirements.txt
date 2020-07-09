@@ -1,2 +1,3 @@
-rxsci
-makinage
+-e git://github.com/MainRo/RxPY.git@v3.1.0_se2
+rxsci>=0.5
+makinage>=0.3.2
