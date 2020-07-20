@@ -18,7 +18,7 @@ jobs:
           dockerfile: ./cpython/Dockerfile
           tags: latest-py
 
-  makinage-cpython-3.6:
+  makinage-cpython-36:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -65,8 +65,8 @@ jobs:
           path: ./serve
           tags: latest
 
-  makinage-serve-3.6:
-    needs: makinage-cpython-3.6
+  makinage-serve-36:
+    needs: makinage-cpython-36
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
