@@ -45,7 +45,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          repository: makinage/makinage
+          repository: makinage/makinage-serve
           path: ./serve
           tags: latest
 
@@ -61,7 +61,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          repository: makinage/makinage
+          repository: makinage/model-publisher
           path: ./model-publisher
           tags: latest
         
