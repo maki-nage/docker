@@ -79,6 +79,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: makinage/makinage-serve
           path: ./serve
+          dockerfile: ./serve/Dockerfile-3.6
           tags: latest-py3.6
         
   makinage-model-publisher:

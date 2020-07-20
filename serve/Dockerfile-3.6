@@ -1,0 +1,5 @@
+FROM makinage/makinage:latest-py3.6
+
+WORKDIR /opt/makinage
+COPY requirements.txt /tmp
+RUN pip3 install --no-cache-dir -r /tmp/requirements.txt
