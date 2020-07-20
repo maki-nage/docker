@@ -18,6 +18,22 @@ jobs:
           dockerfile: ./cpython/Dockerfile
           tags: latest-py
 
+  makinage-cpython-3.6:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: makinage/makinage
+          dockerfile: ./cpython/Dockerfile-3.6
+          tags: latest-py3.6
+        
+        
   makinage-pypy:
     runs-on: ubuntu-latest
     steps:
@@ -49,6 +65,22 @@ jobs:
           path: ./serve
           tags: latest
 
+  makinage-serve-3.6:
+    needs: makinage-cpython-3.6
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: makinage/makinage-serve
+          path: ./serve
+          tags: latest-py3.6
+        
   makinage-model-publisher:
     needs: makinage-pypy
     runs-on: ubuntu-latest
