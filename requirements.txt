@@ -1,4 +1,4 @@
 Rx>=3.1.1
 rxsci>=0.9
 makinage>=0.6.0
-aiokafa<0.7
+aiokafka<0.7
