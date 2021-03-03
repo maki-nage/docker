@@ -18,7 +18,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: makinage/makinage
           dockerfile: ./cpython/Dockerfile
-          tags: ${{ env.RELEASE_VERSION }}-py
+          tags: ${{ env.GIT_TAG_REF }}-py
 
   makinage-cpython-36:
     runs-on: ubuntu-latest
@@ -35,7 +35,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: makinage/makinage
           dockerfile: ./cpython/Dockerfile-3.6
-          tags: ${{ env.RELEASE_VERSION }}-py3.6
+          tags: ${{ env.GIT_TAG_REF }}-py3.6
         
         
   makinage-pypy:
@@ -53,7 +53,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: makinage/makinage
           dockerfile: ./pypy/Dockerfile
-          tags: ${{ env.RELEASE_VERSION }}, ${{ env.RELEASE_VERSION }}-pypy
+          tags: ${{ env.GIT_TAG_REF }}, ${{ env.GIT_TAG_REF }}-pypy
 
   makinage-serve:  
     needs: makinage-cpython
@@ -71,7 +71,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: makinage/makinage-serve
           path: ./serve
-          tags: ${{ env.RELEASE_VERSION }}
+          tags: ${{ env.GIT_TAG_REF }}
 
   makinage-serve-36:
     needs: makinage-cpython-36    
@@ -90,7 +90,7 @@ jobs:
           repository: makinage/makinage-serve
           path: ./serve
           dockerfile: ./serve/Dockerfile-3.6
-          tags: ${{ env.RELEASE_VERSION }}-py3.6
+          tags: ${{ env.GIT_TAG_REF }}-py3.6
         
   makinage-model-publisher:
     needs: makinage-pypy
@@ -108,5 +108,5 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: makinage/model-publisher
           path: ./model-publisher
-          tags: ${{ env.RELEASE_VERSION }}
+          tags: ${{ env.GIT_TAG_REF }}
         
