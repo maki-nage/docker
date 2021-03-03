@@ -1,5 +1,5 @@
 Rx>=3.1.1
-rxsci=0.11.0
-makinage=0.6.0
+rxsci==0.11.0
+makinage==0.6.0
 aiokafka<0.7
 cyclotron-aiokafka>=0.4.1
