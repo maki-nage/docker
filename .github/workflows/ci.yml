@@ -16,7 +16,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: makinage/makinage
           dockerfile: ./cpython/Dockerfile
-          tags: latest-py
+          tags: latest.py
 
   makinage-cpython-36:
     runs-on: ubuntu-latest
@@ -31,7 +31,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: makinage/makinage
           dockerfile: ./cpython/Dockerfile-3.6
-          tags: latest-py3.6
+          tags: latest.py36
         
         
   makinage-pypy:
@@ -47,7 +47,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: makinage/makinage
           dockerfile: ./pypy/Dockerfile
-          tags: latest, latest-pypy
+          tags: latest, latest.pypy
 
   makinage-serve:
     needs: makinage-cpython
@@ -80,7 +80,7 @@ jobs:
           repository: makinage/makinage-serve
           path: ./serve
           dockerfile: ./serve/Dockerfile-3.6
-          tags: latest-py3.6
+          tags: latest.py36
         
   makinage-model-publisher:
     needs: makinage-pypy
