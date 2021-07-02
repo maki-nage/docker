@@ -1,4 +1,4 @@
-FROM pypy:3.6-buster
+FROM pypy:3.7-buster
 
 WORKDIR /opt/makinage
 
