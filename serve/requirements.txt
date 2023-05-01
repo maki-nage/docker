@@ -1,2 +1,2 @@
-mlflow==1.12.1
+mlflow==2.3.1
 pickle5==0.0.11
